@@ -19,7 +19,24 @@ const nftApi = baseApi.injectEndpoints({
       }),
       providesTags: [tagTypes.nftData],
     }),
+
+    getAllNft: build.query({
+      query: (arg: Record<string, any>) => {
+        return {
+          url: "/nft",
+          method: "GET",
+          params: arg,
+        };
+      },
+      transformResponse: (response: []) => {
+        return {
+          response,
+        };
+      },
+      providesTags: [tagTypes.nftData],
+    }),
   }),
 });
 
-export const { useCreateNftMutation, useGetSingleNftQuery } = nftApi;
+export const { useCreateNftMutation, useGetSingleNftQuery, useGetAllNftQuery } =
+  nftApi;
