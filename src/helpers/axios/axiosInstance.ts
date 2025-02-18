@@ -1,4 +1,4 @@
-import { IGenericErrorResponse, ResponseSuccessType } from "@/app/types";
+import { IGenericErrorResponse, ResponseSuccessType } from "@/types";
 import axios from "axios";
 
 const instance = axios.create();

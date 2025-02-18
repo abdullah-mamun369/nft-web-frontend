@@ -4,9 +4,10 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 
 import "./globals.css";
 import { Toaster } from "sonner";
-import Providers from "./lib/Providers/Providers";
+import Providers from "@/lib/Providers/Providers";
+import Navbar from "@/components/Shared/Navbar/Navbar";
 
-// const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Nft Minting",
@@ -20,11 +21,19 @@ export default function RootLayout({
 }) {
   return (
     <Providers>
-      <html lang="en">
-        <body>
+      <html lang="en" className={inter.className}>
+        <body
+          style={{
+            minHeight: "100vh",
+            background: "linear-gradient(90deg, #000000 0%, #111827 100%)",
+            color: "white",
+            margin: 0,
+          }}
+        >
           <AppRouterCacheProvider>
             <>
               <Toaster position="top-center" />
+              <Navbar />
               {children}
             </>
           </AppRouterCacheProvider>
