@@ -7,7 +7,7 @@ const nftApi = baseApi.injectEndpoints({
       query: (data) => ({
         url: "/nft/create-nft",
         method: "POST",
-        body: data,
+        data,
       }),
       invalidatesTags: [tagTypes.nftData],
     }),
