@@ -15,7 +15,9 @@ const Navbar = () => {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Image src={logo} width={24} height={24} alt="logo" />
+        <Box component={Link} href="/">
+          <Image src={logo} width={24} height={24} alt="logo" />
+        </Box>
         <Stack direction="row" spacing={2}>
           <Button
             sx={{
